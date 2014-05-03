@@ -1,0 +1,32 @@
+{
+  "name": "web-protoc",
+  "version": "1.0.0",
+  "engines": { "node": "0.10.x" },
+  "description": "Heroku webservice that runs protoc for you. Because building protoc is hard, and Protocol Buffers are \"Pretty Good\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hfwang/web-protoc.git"
+  },
+  "keywords": [
+    "heroku",
+    "webservice",
+    "protoc",
+    "protocol",
+    "buffers",
+    "protobuf"
+  ],
+  "author": "Hsiu-Fan Wang <hfwang@porkbuns.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hfwang/web-protoc/issues"
+  },
+  "homepage": "https://github.com/hfwang/web-protoc",
+  "dependencies": {
+    "express": "^4.1.1",
+    "logfmt": "^1.1.2"
+  }
+}
