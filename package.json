@@ -5,6 +5,7 @@
   "description": "Heroku webservice that runs protoc for you. Because building protoc is hard, and Protocol Buffers are \"Pretty Good\"",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
