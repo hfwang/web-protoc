@@ -1,7 +1,9 @@
 {
   "name": "web-protoc",
   "version": "1.0.0",
-  "engines": { "node": "0.10.x" },
+  "engines": {
+    "node": "0.10.x"
+  },
   "description": "Heroku webservice that runs protoc for you. Because building protoc is hard, and Protocol Buffers are \"Pretty Good\"",
   "main": "index.js",
   "scripts": {
@@ -28,6 +30,13 @@
   "homepage": "https://github.com/hfwang/web-protoc",
   "dependencies": {
     "express": "^4.1.1",
-    "logfmt": "^1.1.2"
+    "logfmt": "^1.1.2",
+    "tmp": "0.0.23",
+    "ejs": "~1.0.0",
+    "busboy": "~0.2.6",
+    "body-parser": "~1.0.2",
+    "unzip": "~0.1.9",
+    "async": "~0.8.0",
+    "rimraf": "~2.2.7"
   }
 }
