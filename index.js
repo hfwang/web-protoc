@@ -168,13 +168,17 @@ app.post('/compile', function(req, res) {
     try {
       var busboy = new Busboy({ headers: req.headers });
       busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+        var input_zip_path = path.join(paths.input_path, "input.zip");
         if (fieldname == "input") {
           attemptCompileEnqueue.files += 1;
-          file.pipe(unzip.Extract({ path: paths.input_path }))
-            .on("close", function() {
-              attemptCompileEnqueue.files -= 1;
-              attemptCompileEnqueue();
-            });
+          file.pipe(fs.createWriteStream(input_zip_path)).on("close", function() {
+            console.log("Close called");
+            fs.createReadStream(input_zip_path).pipe(unzip.Extract({ path: paths.input_path }))
+              .on("close", function() {
+                attemptCompileEnqueue.files -= 1;
+                attemptCompileEnqueue();
+              });
+          }).on("end", function() { console.log("end called"); });
         }
         // console.log('File [' + fieldname + ']: filename: ' + filename + ', encoding: ' + encoding);
       });
